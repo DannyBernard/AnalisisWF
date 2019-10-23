@@ -16,6 +16,8 @@ namespace RegistroAnalisis.UI.Consultas
         static List<PagoDetalle> lista = new List<PagoDetalle>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             if (!Page.IsPostBack)
             {
                 LlenaReport();
@@ -70,7 +72,7 @@ namespace RegistroAnalisis.UI.Consultas
             ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "Popup", $"ShowReporte('');", true);
             MyPagoReportViewer.ProcessingMode = ProcessingMode.Local;
             MyPagoReportViewer.Reset();
-            MyPagoReportViewer.LocalReport.ReportPath = Server.MapPath(@"\Reportes\ReportPago.rdlc");
+            MyPagoReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Reportes\ReportPago.rdlc");
             MyPagoReportViewer.LocalReport.DataSources.Clear();
             MyPagoReportViewer.LocalReport.DataSources.Add(new ReportDataSource("Pago", Metodo.APago()));
             MyPagoReportViewer.LocalReport.Refresh();

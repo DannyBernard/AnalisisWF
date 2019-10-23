@@ -87,7 +87,7 @@ namespace RegistroAnalisis.UI.Registros
             TipoADropdonwList.DataTextField = "Descripcion";
             TipoADropdonwList.DataBind();
 
-
+            
             RepositorioBase<Pacientes> repositorioPacientes = new RepositorioBase<Pacientes>();
             PacientsDropdownList.DataSource = repositorioPacientes.GetList(x => true);
             PacientsDropdownList.DataValueField = "PacienteID";
@@ -143,6 +143,15 @@ namespace RegistroAnalisis.UI.Registros
             if (!string.IsNullOrEmpty(DescripcionTextBox.Text))
             {
                 repositorio.Guardar(new TipoAnalisis(0, DescripcionTextBox.Text, Convert.ToDecimal(PrecioATexBox.Text), DateTime.Now));
+            }
+            LlenarCombo();
+        }
+        protected void AgregarPaciente_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Pacientes> repositorio = new RepositorioBase<Pacientes>();
+            if (!string.IsNullOrEmpty(NombreTextBox.Text))
+            {
+                repositorio.Guardar(new Pacientes(0, NombreTextBox.Text, DireccionTextBox.Text,TelefonoTextBox.Text, DateTime.Now));
             }
             LlenarCombo();
         }

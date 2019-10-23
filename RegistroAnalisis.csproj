@@ -98,6 +98,7 @@
     <Content Include="RegistroAnalisisBDWebDataSet.xsc">
       <DependentUpon>RegistroAnalisisBDWebDataSet.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\RegistroAnalisis20191022071511 - Web Deploy.pubxml" />
     <None Include="RegistroAnalisisBDWebDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>RegistroAnalisisBDWebDataSet.Designer.cs</LastGenOutput>
@@ -255,11 +256,11 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reportes\ReportAnalisis.rdlc">
+    <Content Include="Reportes\ReportAnalisis.rdlc">
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReportPago.rdlc" />
-    <EmbeddedResource Include="Reportes\ReportTipoAnalisis.rdlc" />
+    </Content>
+    <Content Include="Reportes\ReportPago.rdlc" />
+    <Content Include="Reportes\ReportTipoAnalisis.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
